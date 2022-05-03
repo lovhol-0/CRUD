@@ -1,0 +1,53 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aqua; */
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* background-color: burlywood; */
+}
+
+ button {
+  width: 320px;
+  height: 50px;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+ button:hover {
+  cursor: pointer;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* background-color: deeppink; */
+}
+
+.image {
+  width: 700px;
+  height: auto;
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  /* background-color: lightsteelblue; */
+}
+
+.image h3 {
+  margin: 20px;
+}
+
+.image img {
+  width: 150px;
+  height: 150px;
+}
