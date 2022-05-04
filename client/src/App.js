@@ -2,6 +2,7 @@ import './App.css';
 import {useState} from "react";
 import Axios from "axios";
 
+
 function App() {
 
   const [imagesList, setImagesList] = useState([]);
@@ -14,7 +15,9 @@ function App() {
   };
 
   return (
+    
     <div className="App">
+       
       <div className="information">
         <h1>Bothniabladet</h1>
       </div>
@@ -30,8 +33,7 @@ function App() {
             <h3>Image: </h3>
             <img src={`data:image/png;base64,${val.img}`} alt=""/>
 
-            <h3>Hejsan</h3>
-          
+            <h3>Hejsan</h3>  
           </div>
           );
         })}
