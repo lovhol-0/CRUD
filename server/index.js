@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "password",
-    database: "bothniadb", 
+    password: "Root!23M",
+    database: "BothniaDB", 
 });
 
 app.get("/images", (req, res) => {
