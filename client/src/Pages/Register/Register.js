@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import  Axios  from 'axios';
 import './Register.css'
 
+
+
 function RegisterUser(){
 
     const [fNameReg, setFNameReg] = useState("");
@@ -32,22 +34,33 @@ function RegisterUser(){
         <div className={"register"}>
              <div className={"Registrering"}>
                  <h1> Registrering </h1>
-                 <label> Namn </label>
-                 <input type="text"
-                        onChange={(e)=> {
-                            setFNameReg(e.target.value)}}/>
-                 <label> Efternamn </label>
-                 <input type="text" onChange={(e)=> {
-                     setLNameReg(e.target.value)}}/>
+
+                <div class="inputStyle">           
+                    <label> Namn </label> 
+                    <input type="text" onChange={(e)=> {setFNameReg(e.target.value)}}/> 
+                </div>   
+
+                <div class="inputStyle">  
+                     <label> Efternamn </label> 
+                     <input type="text" onChange={(e)=> {setLNameReg(e.target.value)}}/>
+                </div>
+
+                <div class="inputStyle">
                  <label> Adress </label>
-                 <input type="text" onChange={(e)=> {
-                     setAddressReg(e.target.value)}}/>
+                 <input type="text" onChange={(e)=> {setAddressReg(e.target.value)}}/>
+                </div>
+
+                <div class="inputStyle">
                  <label> Email </label>
-                 <input type="text" onChange={(e)=> {
-                     setEmailReg(e.target.value)}}/>
+                 <input type="text" onChange={(e)=> {setEmailReg(e.target.value)}}/>
+                </div>
+
+                <div class="inputStyle">          
                  <label> Lösenord </label>
-                 <input type="text" onChange={(e)=> {
-                     setPasswordReg(e.target.value)}}/>
+                 <input type="text" onChange={(e)=> {setPasswordReg(e.target.value)}}/>
+                </div>
+
+
                  <button onClick={register()}> Registrera </button>
              </div>
         </div>
