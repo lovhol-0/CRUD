@@ -33,9 +33,8 @@ function RegisterUser(){
              <div className={"Registrering"}>
                  <h1> Registrering </h1>
                  <label> Namn </label>
-                 <input type="text"
-                        onChange={(e)=> {
-                            setFNameReg(e.target.value)}}/>
+                 <input type="text" onChange={(e)=> {
+                     setFNameReg(e.target.value)}}/>
                  <label> Efternamn </label>
                  <input type="text" onChange={(e)=> {
                      setLNameReg(e.target.value)}}/>
@@ -48,7 +47,7 @@ function RegisterUser(){
                  <label> Lösenord </label>
                  <input type="text" onChange={(e)=> {
                      setPasswordReg(e.target.value)}}/>
-                 <button onClick={register()}> Registrera </button>
+                 <button onClick={register}> Registrera </button>
              </div>
         </div>
         
