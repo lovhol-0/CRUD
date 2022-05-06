@@ -36,30 +36,28 @@ app.post('/register', (req, res)=>{
     db.query("INSERT INTO bothniadb.customer (fName, lName, billingAddress, email, password) VALUES (?, ?, ?, ?, ?)",
         [fName, lName, address, email, password],
       (err, result)=> {
-
-        if (err) {
-        res.send({err:err});
+        console.log(err);
         } 
-            if (result) {
-                res.send(result)
-            } else {
-                res.send({message: "Felaktigt email/lösenord!"});
-
-            }
-        }
         
     );
 })
 
-app.post('login', (req, res) => {
+ app.post('/login', (req, res) => {
     const email = req.body.email
     const password = req.body.password
-
+    
     db.query(
-        "SELECT * FROM users WHERE username = ? AND password = ?",
+        "SELECT * FROM bothniadb.customer WHERE email = ? AND password = ?",
         [email, password],
         (err, result) => {
-            console.log(err);
+           if (err) {
+               res.send({err: err});
+           }
+           if (result.length > 0) {
+               res.send(result);
+           } else {
+               res.send({message: "Felaktigt email/lösenord!"});
+           }
         }
     )
 });
