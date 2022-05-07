@@ -12,6 +12,12 @@ const Layout = () => {
         </div>
         <ul className="nav-list" id="navi-list">
           <li className="list-item">
+          <div className="search">
+            <input type="text" placeholder="Sök efter bild, händelse eller tema" name="search"></input>
+            {/* <button type="submit">Sök</button> */}
+          </div>
+          </li>
+          <li className="list-item">
             <Link to="/arkiv">Arkiv</Link>
           </li>
           <li className="list-item">

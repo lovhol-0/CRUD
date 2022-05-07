@@ -5,6 +5,7 @@ import Hem from "./pages/hem/hem";
 import Arkiv from "./pages/arkiv/arkiv";
 import Kontakt from "./pages/kontakt/kontakt";
 import Inlogg from "./pages/inlogg/inlogg";
+import Sokresultat from "./pages/sokresultat/sokresultat";
 
 const ProjectRoutes = () => {
     return (
@@ -15,19 +16,8 @@ const ProjectRoutes = () => {
                 <Route path="arkiv" element={<Arkiv />} />
                 <Route path="kontakt" element={<Kontakt />} />
                 <Route path="inlogg" element={<Inlogg />} />
+                <Route path="sokresultat" element={<Sokresultat />} />
             </Route>
-
-          {/* <Route path="/" element={<Startsida />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/skresultat" element={<Skresultat />} />
-          <Route path="/arkiv" element={<Arkiv />} />
-          <Route path="/inloggadkund" element={<Inloggadkund />} />
-          <Route path="/skapakonto" element={<Skapakonto />} />
-          <Route path="/inloggningssida" element={<Inloggningssida />} />
-          <Route path="/laddauppbild" element={<Laddauppbild />} />
-          <Route path="/varukorg" element={<Varukorg />} />
-          <Route path="/valdbild" element={<Valdbild />} />
-          <Route path="/dhiwise-dashboard" element={<Home />} /> */}
         </Routes>
       </Router>
     );

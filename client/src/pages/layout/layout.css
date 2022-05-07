@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+body > #root > div {
+	height: 100vh;
+  }
+  
+  html, body { 
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  }
+
 /* Navigeringsraden struktureras */
 .navbar {
 	color: black;
@@ -52,6 +64,29 @@
 	height: 3px;
 	background-color: #17A387;
 	margin-bottom: 4px;
+}
+
+/* .search button {
+	float: right;
+	padding: 6px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	width: auto;
+	height: auto;
+} */
+
+.search input {
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 17px;
+	border: none;
+	background-color: lightgrey;
+	border-radius: 10px;
+	width: 50vh;
 }
 
 /* För att applicera annan stil på skärmar med mindre bredd */
