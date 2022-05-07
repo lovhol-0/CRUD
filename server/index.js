@@ -25,6 +25,21 @@ app.get("/images", (req, res) => {
     });
 });
 
+app.post("/imagesID", (req, res) => {
+    const category = req.body.category;
+    console.log(req.body.category)
+    db.query("SELECT id, category, to_base64(img) as img FROM images_test WHERE category = ?", 
+    [category],
+     (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            // console.log(result);
+            res.send(result);
+        }
+    });
+});
+
 app.listen(3003, ()=> {
     console.log("Server is running on port 3003")
 });
