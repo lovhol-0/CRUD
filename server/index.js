@@ -25,9 +25,8 @@ app.get("/images", (req, res) => {
     });
 });
 
-app.post("/imagesID", (req, res) => {
+app.put("/imagesID", (req, res) => {
     const category = req.body.category;
-    console.log(req.body.category)
     db.query("SELECT id, category, to_base64(img) as img FROM images_test WHERE category = ?", 
     [category],
      (err, result) => {
