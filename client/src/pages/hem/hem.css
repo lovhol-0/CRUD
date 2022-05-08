@@ -19,7 +19,7 @@
     font-size: 60px;
   }
 
-/* .content button {
+.content button {
 	padding: 6px;
 	margin-top: 8px;
 	margin-right: 16px;
@@ -29,7 +29,7 @@
 	cursor: pointer;
 	width: auto;
 	height: auto;
-} */
+}
 
 .content input {
 	padding: 6px;

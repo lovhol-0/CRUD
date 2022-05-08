@@ -1,6 +1,7 @@
 import "./layout.css";
 import logo from "./../../images/logo.png";
 import { Outlet, Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = () => {
 
