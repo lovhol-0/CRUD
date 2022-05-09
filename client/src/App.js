@@ -1,9 +1,8 @@
-import './App.css';
-import {useState} from "react";
-import Axios from "axios";
+import Routes from "./routes";
 
 
 function App() {
+<<<<<<< HEAD
 
   const [imagesList, setImagesList] = useState([]);
 
@@ -40,6 +39,9 @@ function App() {
       </div>
     </div>
   );
+=======
+    return <Routes />;
+>>>>>>> origin/love
 }
 
 export default App;

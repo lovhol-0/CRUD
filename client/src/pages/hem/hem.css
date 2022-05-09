@@ -1,0 +1,44 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 1000px; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    /* background-color: aqua; */
+  }
+
+.content {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.content h1 {
+    font-size: 60px;
+  }
+
+.content button {
+	padding: 6px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	width: auto;
+	height: auto;
+}
+
+.content input {
+	padding: 6px;
+	margin-top: 8px;
+	font-size: 17px;
+  height: 30px;
+	border: none;
+	background-color: white;
+	border-radius: 10px;
+	width: 50vh;
+}
+
