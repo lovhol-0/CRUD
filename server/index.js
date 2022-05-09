@@ -45,9 +45,9 @@ app.post('/register', (req, res)=>{
  app.post('/login', (req, res) => {
     const email = req.body.email
     const password = req.body.password
-
+    
     db.query(
-        "SELECT * FROM users WHERE username = ? AND password = ?",
+        "SELECT * FROM bothniadb.customer WHERE email = ? AND password = ?",
         [email, password],
         (err, result) => {
            if (err) {
