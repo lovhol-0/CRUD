@@ -4,8 +4,9 @@ import Layout from "./pages/layout/layout";
 import Hem from "./pages/hem/hem";
 import Arkiv from "./pages/arkiv/arkiv";
 import Kontakt from "./pages/kontakt/kontakt";
-import Inlogg from "./pages/inlogg/inlogg";
 import Sokresultat from "./pages/sokresultat/sokresultat";
+import RegisterUser from "./pages/register/register";
+import Login from "./pages/login/login";
 
 const ProjectRoutes = () => {
     return (
@@ -15,8 +16,9 @@ const ProjectRoutes = () => {
                 <Route index element={<Hem />} />
                 <Route path="arkiv" element={<Arkiv />} />
                 <Route path="kontakt" element={<Kontakt />} />
-                <Route path="inlogg" element={<Inlogg />} />
+                <Route path="login" element={<Login />} />
                 <Route path="sokresultat" element={<Sokresultat />} />
+                <Route path="register" element={<RegisterUser />} />
             </Route>
         </Routes>
       </Router>

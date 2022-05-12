@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "MyNewPass",
-    database: "bothniadb", 
+    password: "Root!23M",
+    database: "BothniaDB", 
 });
 
 app.get("/images", (req, res) => {
@@ -37,6 +37,43 @@ app.put("/imagesID", (req, res) => {
             res.send(result);
         }
     });
+});
+
+app.post('/register', (req, res)=>{
+
+    const fName = req.body.fName
+    const lName = req.body.lName
+    const address = req.body.address
+    const email = req.body.email
+    const password = req.body.password
+
+    db.query("INSERT INTO bothniadb.customer (fName, lName, billingAddress, email, password) VALUES (?, ?, ?, ?, ?)",
+        [fName, lName, address, email, password],
+      (err, result)=> {
+        console.log(err);
+        } 
+        
+    );
+})
+
+app.post('/login', (req, res) => {
+    const email = req.body.email
+    const password = req.body.password
+    
+    db.query(
+        "SELECT * FROM bothniadb.customer WHERE email = ? AND password = ?",
+        [email, password],
+        (err, result) => {
+           if (err) {
+               res.send({err: err});
+           }
+           if (result.length > 0) {
+               res.send(result);
+           } else {
+               res.send({message: "Felaktigt email/lösenord!"});
+           }
+        }
+    )
 });
 
 app.listen(3003, ()=> {
