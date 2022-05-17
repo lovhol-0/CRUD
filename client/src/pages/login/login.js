@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "./login.css"
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -9,7 +11,8 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
-    const [loginStatus, setloginStatus] = useState(false);
+    const [loginStatus, setloginStatus] = useState();
+    const navigate = useNavigate();
 
     
     const loggaIn = () => {
@@ -24,10 +27,17 @@ function Login() {
                 setLoginMessage(response.data.message)
                 setloginStatus(false);
                 console.log("loginStatus " + loginStatus);
+                localStorage.removeItem("LoggedIn");
+                localStorage.setItem("LoggedIn", false);
             } else { setLoginMessage(response.data[0].email)
                 setloginStatus(true);
+               
                 console.log("loginStatus " + loginStatus);
-                window.location.href = '/'
+                // window.location.href = '/'
+                
+                localStorage.removeItem("LoggedIn");
+                localStorage.setItem("LoggedIn", true);
+                navigate("/");
             }
     });
             

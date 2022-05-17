@@ -1,0 +1,66 @@
+.kontakt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: white;
+  }
+
+
+h1 {
+    color: rgb(0, 0, 0);
+  }
+
+ p {
+    display: block;
+    min-width: 100px;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .kontaktGruppen {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
+    border-radius: 24px;
+    padding: 50px;
+  }
+
+  .kontaktGruppen img {
+      width: 80px;
+  }
+
+  .imagelogo {
+    display: flex;
+    justify-content: center;
+}
+
+  .kontaktGruppen:last-child {
+      margin-right: 0;
+    
+  }
+
+  h2 {
+      font-size: 40px;
+      font-weight: bold;
+  }
+
+.headerText {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.kontakter {
+    display: inline-flex;
+    flex-direction: row;
+    margin-top: 5%;
+    margin-right: -5%
+}
+
+.spaceBottom {
+    margin-bottom: 40px;
+}

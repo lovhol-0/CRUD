@@ -29,9 +29,11 @@ function App() {
     Axios.put("http://localhost:3003/imagesID",{category: category}).then((response) => {
       setImagesIDList(response.data);
       // {setCategory(localStorage.getItem("Category"));}
-      handleSet();
+      
     });
   };
+
+  
 
   return (
     <div className="test">
@@ -39,14 +41,15 @@ function App() {
       {/* <input type="text" placeholder={category} name="search"
           onChange={(event)=> {setCategory(event.target.value)}}/> */}
 
-      
+      {/* {setCategory(localStorage.getItem("Category"))} */}
       {console.log(category)}
 
       <h1>Nuvarande sökning: {category}</h1>
+      
       {/* <input type="text"></input> */}
 
-      <input type="text"  name="search"
-          onChange={(event)=> {category({text: event.target.value})}}/>
+      <input type="text" name="search"  value={category}
+          onChange={(event)=> {setCategory(event.target.value)}}/>
       {/* {console.log(category)} */}
 
       <button onClick={handle}>Sök</button>
@@ -67,8 +70,9 @@ function App() {
                   <img className="popimg" src={`data:image/png;base64,${val.img}`} alt=""/>
                   </div>
                   <div className="popcontent">
-                  {/* <h3>ID: {val.id}</h3> */}
+                  <h3>ID: {val.imageID}</h3>
                   <h3>Category: {val.category}</h3>
+                  <h3>Price: {val.price}</h3>
                   </div>
                   </div>
                 </span>
