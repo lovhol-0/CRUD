@@ -4,12 +4,16 @@ import "./Login.css"
 
 
 
+
+
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
-    
+    const [loginStatus, setloginStatus] = useState(false);
+  
+
     const loggaIn = () => {
         Axios.post("http://localhost:3003/login",{
             
@@ -20,11 +24,20 @@ function Login() {
 
                 if (response.data.message) {
                 setLoginMessage(response.data.message)
+                setloginStatus(false);
+                console.log("loginStatus " + loginStatus);
             } else { setLoginMessage(response.data[0].email)
+                setloginStatus(true);
+                console.log("loginStatus " + loginStatus);
+
+                window.location.href = '/'
+                   
             }
     });
             
         };
+
+        
 
 
     return(
@@ -53,5 +66,6 @@ function Login() {
 }
 
 export default Login;
+
 
 

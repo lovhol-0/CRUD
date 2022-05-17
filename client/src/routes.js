@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./pages/layout/layout";
-import Hem from "./pages/hem/hem";
-import Arkiv from "./pages/arkiv/arkiv";
-import Kontakt from "./pages/kontakt/kontakt";
-import Inlogg from "./pages/inlogg/inlogg";
-import Sokresultat from "./pages/sokresultat/sokresultat";
+import Layout from "./Pages/layout/layout";
+import Hem from "./Pages/hem/hem";
+import Arkiv from "./Pages/arkiv/arkiv";
+import Kontakt from "./Pages/kontakt/kontakt";
+import Sokresultat from "./Pages/sokresultat/sokresultat";
+import Login from "./Pages/Login/Login";
+import RegisterUser from "./Pages/Register/Register";
 
 const ProjectRoutes = () => {
     return (
@@ -15,7 +16,8 @@ const ProjectRoutes = () => {
                 <Route index element={<Hem />} />
                 <Route path="arkiv" element={<Arkiv />} />
                 <Route path="kontakt" element={<Kontakt />} />
-                <Route path="inlogg" element={<Inlogg />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<RegisterUser />} />
                 <Route path="sokresultat" element={<Sokresultat />} />
             </Route>
         </Routes>

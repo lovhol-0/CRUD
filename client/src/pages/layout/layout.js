@@ -2,10 +2,14 @@ import "./layout.css";
 import logo from "./../../images/logo.png";
 import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import loginStatus from "../Login/Login";
+
+
 
 const Layout = () => {
 
   return (
+    
     <>
       <nav className="navbar">
         <div>
@@ -28,7 +32,10 @@ const Layout = () => {
             |
           </li>
           <li className="list-item">
-            <Link to="/inlogg">Logga in / Skapa konto</Link>
+            <Link to="/login">Logga in</Link>
+          </li>
+          <li className="list-item">
+            <Link to="/register">Skapa konto</Link>
           </li>
         </ul>
         <div className="menu" id="toggle-button" onClick={() => {
@@ -44,6 +51,7 @@ const Layout = () => {
 
       <Outlet />
     </>
+    
   )
 
 };

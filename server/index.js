@@ -9,8 +9,8 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "Root!23M",
-    database: "BothniaDB", 
+    password: "password",
+    database: "bothniadb", 
 });
 
 app.get("/images", (req, res) => {
@@ -25,7 +25,7 @@ app.get("/images", (req, res) => {
     });
 });
 
-app.post('/register', (req, res)=>{
+app.post('/register', (req, res) => {
 
     const fName = req.body.fName
     const lName = req.body.lName
@@ -37,10 +37,25 @@ app.post('/register', (req, res)=>{
         [fName, lName, address, email, password],
       (err, result)=> {
         console.log(err);
-        } 
         
-    );
+});
 })
+
+/*
+app.post('/upload', (req, res) => {
+
+    const category = req.body.category
+    const keyword = req.body.keyword
+    const file = req.body.keyword
+
+    db.query("INSERT INTO bothniadb.images (category, keyword, img) VALUES (?, ?, ?"),
+        [category, keyword, file],
+        (err, result)=> {
+            console.log(err);
+        }
+
+}) 
+*/
 
  app.post('/login', (req, res) => {
     const email = req.body.email

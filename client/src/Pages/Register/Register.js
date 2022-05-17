@@ -9,7 +9,7 @@ function RegisterUser(){
     const [addressReg, setAddressReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-
+   // const [registerMessage, setRegisterMessage] = useState("");
 
     const register = () => {
         Axios.post("http://localhost:3003/register",{
@@ -19,10 +19,10 @@ function RegisterUser(){
             email: emailReg,
             password: passwordReg,
             
-            }).then((response) => {
+            }).then((response) => { 
                 console.log(response);
             });
-            
+        
         };
 
 
@@ -55,8 +55,6 @@ return(
                  <label> Lösenord </label>
                  <input type="text" onChange={(e)=> {setPasswordReg(e.target.value)}}/>
                 </div>
-
-
                  <button onClick={register}> Registrera </button>
              </div>
         </div>
