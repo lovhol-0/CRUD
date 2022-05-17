@@ -1,3 +1,5 @@
+
+
 .App {
     display: flex;
     flex-direction: column;
@@ -8,7 +10,10 @@
     background-position: center;
     background-image: url('https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
     /* background-color: aqua; */
+	
   }
+
+  
 
 .content {
   margin-top: 10vh;

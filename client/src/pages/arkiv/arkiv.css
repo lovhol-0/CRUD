@@ -1,0 +1,134 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height:auto;
+    background-image: url('https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    /* background-color: aqua; */
+  }
+  
+  .information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* background-color: burlywood; */
+  }
+  
+   button {
+    padding: 6px;
+	margin-top: 8px;
+	margin-right: 16px;
+	background: #ddd;
+	font-size: 17px;
+	border: none;
+	cursor: pointer;
+	width: auto;
+	height: auto;
+  }
+  
+   button:hover {
+    cursor: pointer;
+  }
+  
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    /* border-style: solid; */
+  
+  
+    /* background-color: deeppink; */
+  }
+  
+  .image {
+    width: auto;
+    height: auto;
+    margin: 10px;
+  
+    /* border-style: solid; */
+  
+    
+    /* background-color: lightsteelblue; */
+  }
+  
+  .img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  
+  /* 
+  .image h3 {
+    margin: 20px;
+  }
+  
+  .image img {
+    width: auto;
+    height: auto;
+  } */
+  
+  .test {
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .test h1 {
+    margin-left: 10px;
+  }
+  
+  .popup-arrow {
+    color: rgb(255, 255, 255);
+  }
+  [role='tooltip'].popup-content {
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+  }
+  
+  .popup-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  [data-popup='tooltip'].popup-overlay {
+    background: transparent;
+  }
+  
+  
+  .popup-content {
+    margin: auto;
+    background: rgb(255, 255, 255);
+    width: 60%;
+    padding: 10px;
+  }
+  
+  .popimage {
+    float: left;
+    width: 50%;
+  }
+  
+  .popimg {
+    width: 100%;
+  }
+  
+  .popcontent {
+    float: left;
+    margin-left: 2%;
+  }
+  
+  input {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+    height: 30px;
+      border: none;
+      background-color: lightgrey;
+      border-radius: 10px;
+      width: 50vh;
+  }

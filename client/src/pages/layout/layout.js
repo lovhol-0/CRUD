@@ -28,7 +28,13 @@ const Layout = () => {
             |
           </li>
           <li className="list-item">
-            <Link to="/inlogg">Logga in / Skapa konto</Link>
+            <Link to="/login">Logga in</Link>
+          </li>
+          <li className="list-item">
+            |
+          </li>
+          <li className="list-item">
+            <Link to="/register">Skapa konto</Link>
           </li>
         </ul>
         <div className="menu" id="toggle-button" onClick={() => {

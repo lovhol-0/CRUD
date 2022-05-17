@@ -7,9 +7,10 @@ function App() {
 
   const [category, setCategory] = useState("");
   const handle = () => {
+    localStorage.removeItem("Category");
     localStorage.setItem("Category", category);
   };
-  localStorage.removeItem("Category");
+  
 
   return (
     <div className="App">
@@ -17,7 +18,7 @@ function App() {
         <h1>Bothniabladets Bildbyrå</h1>
         <input type="text" placeholder="Sök efter bild, händelse eller tema" name="search"
           onChange={(event)=> {setCategory(event.target.value)}}/>
-        <Link to="/sokresultat" className="btn btn-primary" onClick={handle}>Sök</Link>
+        <Link to="/arkiv" className="btn btn-primary" onClick={handle}>Sök</Link>
       </div>
     </div>
   );

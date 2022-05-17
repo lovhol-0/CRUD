@@ -20,6 +20,10 @@ function App() {
 
   return (
     <div className="test">
+
+      {/* <input type="text" placeholder={category} name="search"
+          onChange={(event)=> {setCategory(event.target.value)}}/> */}
+
       <h1>{category}</h1>
       <div className="images">
         {getImagesID(category)}

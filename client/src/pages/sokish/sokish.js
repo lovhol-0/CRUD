@@ -16,7 +16,7 @@ function App() {
   };
 
   const getImagesID = (category) => {
-    Axios.post("http://localhost:3003/imagesID",{category: category}).then((response) => {
+    Axios.put("http://localhost:3003/imagesID",{category: category}).then((response) => {
       setImagesIDList(response.data);
     });
   };
@@ -48,14 +48,14 @@ function App() {
         <input type="text" placeholder="Sök..."
                         onChange={(event)=> {
                             setCategory(event.target.value)}}/>
-                             <button
+                             {/* <button
                   onClick={() => {
                     getImagesID(setCategory);
                   }}
                 >
                   {" "}
                   Update
-                </button>
+                </button> */}
               <button onClick={getImagesID(category)}>Show imagesID</button>
         {imagesIDList.map((val, key) => {
             
