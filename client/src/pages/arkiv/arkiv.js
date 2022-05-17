@@ -67,7 +67,7 @@ function App() {
                   <img className="popimg" src={`data:image/png;base64,${val.img}`} alt=""/>
                   </div>
                   <div className="popcontent">
-                  <h3>ID: {val.id}</h3>
+                  {/* <h3>ID: {val.id}</h3> */}
                   <h3>Category: {val.category}</h3>
                   </div>
                   </div>

@@ -27,7 +27,7 @@ const db = mysql.createConnection({
 
 app.put("/imagesID", (req, res) => {
     const category = req.body.category;
-    db.query("SELECT id, category, to_base64(img) as img FROM images_test WHERE category LIKE ?", 
+    db.query("SELECT category, to_base64(img) as img FROM images WHERE category LIKE ?", 
     ["%" + category + "%"],
      (err, result) => {
         if (err) {
