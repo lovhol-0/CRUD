@@ -7,7 +7,7 @@ const Layout = () => {
   
 
   return (
-    <div>
+    <>
     {
       (() => {
           if(localStorage.getItem("LoggedIn")==='true') {
@@ -111,7 +111,7 @@ const Layout = () => {
 
     
   
-  </div>
+  </>
   )
 
 };

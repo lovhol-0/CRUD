@@ -33,11 +33,12 @@ function Login() {
                 setloginStatus(true);
                
                 console.log("loginStatus " + loginStatus);
-                // window.location.href = '/'
+                
                 
                 localStorage.removeItem("LoggedIn");
                 localStorage.setItem("LoggedIn", true);
-                navigate("/");
+                window.location.href = '/'
+                // navigate("/");
             }
     });
             
