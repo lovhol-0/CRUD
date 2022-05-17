@@ -13,7 +13,7 @@ function App() {
   const [category, setCategory] = useState("");
 
   const handleDelete = () => {
-    localStorage.removeItem("Category");
+    localStorage.setItem("Category", "");
   };
 
   const handle = () => {
@@ -44,20 +44,19 @@ function App() {
       {/* {setCategory(localStorage.getItem("Category"))} */}
       {console.log(category)}
 
-      <h1>Nuvarande sökning: {category}</h1>
+      <h1>Nuvarande sökning: {localStorage.getItem("Category")}</h1>
       
       {/* <input type="text"></input> */}
 
-      <input type="text" name="search"  value={category}
-          onChange={(event)=> {setCategory(event.target.value)}}/>
+      <input type="text" name="search"  value={localStorage.getItem("Category")}
+          onChange={(event)=> {localStorage.setItem("Category", event.target.value)}}/>
       {/* {console.log(category)} */}
 
-      <button onClick={handle}>Sök</button>
-      <br></br>
+      {/* <button onClick={handle}>Sök</button> */}
       <button onClick={handleDelete}>Återställ sökning</button>
 
       <div className="images">
-        {getImagesID(category)}
+        {getImagesID(localStorage.getItem("Category"))}
         {imagesIDList.map((val, key) => {            
             return (
             <div className="image">
