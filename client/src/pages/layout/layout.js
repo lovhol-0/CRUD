@@ -4,6 +4,12 @@ import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Layout = () => {
+
+  const handle = () => {
+    {localStorage.removeItem("LoggedIn")};
+                        {localStorage.setItem("LoggedIn", false)};
+                        {window.location.href = '/'};
+  };
   
 
   return (
@@ -30,10 +36,13 @@ const Layout = () => {
                       <li className="list-item">
                         <Link to="/kontakt">Kontakt</Link>
                       </li>
-                      {/* <li className="list-item">
+                      <li className="list-item">
                         |
                       </li>
-                      <li className="list-item">
+                      <li className="list-item" onClick={handle}>
+                        <Link to="">Logga ut</Link>
+                      </li>
+                      {/* <li className="list-item">
                         <Link to="/login">Logga in</Link>
                       </li>
                       <li className="list-item">
