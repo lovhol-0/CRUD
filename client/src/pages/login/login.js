@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "./login.css"
-
-
+export const loginStatus = ("");
 
 function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
-    const [loginStatus, setloginStatus] = useState(false);
-
+    const [loginStatus, setloginStatus] = useState("false");
+    
     
     const loggaIn = () => {
         Axios.post("http://localhost:3003/login",{
@@ -27,11 +26,19 @@ function Login() {
             } else { setLoginMessage(response.data[0].email)
                 setloginStatus(true);
                 console.log("loginStatus " + loginStatus);
-                window.location.href = '/'
+                window.location.href = '/inloggad'
+
             }
     });
             
         };
+
+       /* const logout = () => {
+            setloginStatus(false);
+            window.location.href = '/'
+        };
+*/
+      
 
 
     return(
@@ -58,5 +65,5 @@ function Login() {
       
     );
 }
-
 export default Login;
+

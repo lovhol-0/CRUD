@@ -9,7 +9,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "MyNewPass",
+    password: "password",
     database: "bothniadb", 
 });
 
@@ -51,6 +51,7 @@ app.post('/register', (req, res)=>{
         [fName, lName, address, email, password],
       (err, result)=> {
         console.log(err);
+        res.send(result.data);
         } 
         
     );
