@@ -1,5 +1,9 @@
 import "./layout.css";
 import logo from "./../../images/logo.png";
+import laddaupp from "./../../images/laddaupp.png";
+import kontakt from "./../../images/kontakt.png";
+import arkiv from "./../../images/arkiv.png";
+import loggain from "./../../images/loggain.png";
 import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,10 +35,13 @@ const Layout = () => {
                       </div> */}
                       </li>
                       <li className="list-item">
-                        <Link to="/arkiv">Arkiv</Link>
+                        <Link to="/arkiv"><img src={arkiv} alt="Arkiv symbol"/>Arkiv</Link>
                       </li>
                       <li className="list-item">
-                        <Link to="/kontakt">Kontakt</Link>
+                        <Link to="/kontakt"><img src={kontakt} alt="Kontakt symbol"/>Kontakt</Link>
+                      </li>
+                      <li className="list-item">
+                        <Link to="/laddaupp"><img src={laddaupp} alt="Ladda upp symbol"/>Ladda upp bild</Link>
                       </li>
                       <li className="list-item">
                         |
@@ -73,23 +80,23 @@ const Layout = () => {
                       <Link to="/"><img class="primary-icon" src={logo} alt="Logo"/></Link>
                     </div>
                     <ul className="nav-list" id="navi-list">
-                      <li className="list-item">
-                      {/* <div className="search">
+                      {/* <li className="list-item">
+                      <div className="search">
                         <input type="text" placeholder="Sök efter bild, händelse eller tema" name="search"></input>
                         <button type="submit">Sök</button>
-                      </div> */}
+                      </div>
+                      </li> */}
+                      <li className="list-item">
+                        <Link to="/arkiv"><img src={arkiv} alt="Arkiv symbol"/>Arkiv</Link>
                       </li>
                       <li className="list-item">
-                        <Link to="/arkiv">Arkiv</Link>
-                      </li>
-                      <li className="list-item">
-                        <Link to="/kontakt">Kontakt</Link>
+                        <Link to="/kontakt"><img src={kontakt} alt="Kontakt symbol"/>Kontakt</Link>
                       </li>
                       <li className="list-item">
                         |
                       </li>
                       <li className="list-item">
-                        <Link to="/login">Logga in</Link>
+                        <Link to="/login"><img src={loggain} alt="Logga in symbol"/>Logga in</Link>
                       </li>
                       <li className="list-item">
                         |
