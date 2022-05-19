@@ -1,7 +1,10 @@
 import './kontakt.css'
 import logo from "./../../images/logo.png";
 
+/*
+Här visas kontaktinformation till de som arbetar på Bothniabladet.
 
+*/
 
 
 const Kontakt = () => {

@@ -6,10 +6,19 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+
+/*
+Fil för databas-kopplingen
+Detta är våran server-del. Här sköts allt som har med att skicka eller ta emot data 
+från vår MySql-databas "bothniadb". 
+Ex. Logga in, registrera konto och bildsökning.
+
+*/
+
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "MyNewPass",
+    password: "password",
     database: "bothniadb", 
 });
 
@@ -50,7 +59,14 @@ app.post('/register', (req, res)=>{
     db.query("INSERT INTO bothniadb.customer (fName, lName, billingAddress, email, password) VALUES (?, ?, ?, ?, ?)",
         [fName, lName, address, email, password],
       (err, result)=> {
-        console.log(err);
+      
+       if (err) {
+           console.log(err);
+           res.send({message: "Något gick fel med registreringen"});
+       }
+       if (result.data != 0){
+        res.send(data);
+        } 
         } 
         
     );

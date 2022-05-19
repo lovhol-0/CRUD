@@ -7,6 +7,15 @@ import loggain from "./../../images/loggain.png";
 import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+/*
+Denna sidan består utav två navbars. En för användare som inte är inloggade
+och en för inloggad användare. De byts automatiskt när man loggar in eller ut.
+Dessa navbars har länkar för att navigera sig till olika sidor. 
+*/
+
+
+
 const Layout = () => {
 
   const handle = () => {

@@ -2,6 +2,12 @@ import "./hem.css";
 import {useState} from "react";
 import { Link } from "react-router-dom";
 
+/*
+Detta är vår "homescreen". Den visas vare sig du är inloggad eller utloggad. 
+Den består utav en bakgrundsbild samt en bild-sökfunktion.
+
+*/
+
 
 function App() {
 

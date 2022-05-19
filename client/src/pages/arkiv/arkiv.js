@@ -3,6 +3,15 @@ import {useState} from "react";
 import Axios from "axios";
 import Popup from 'reactjs-popup';
 
+/*
+Sida som visar bilder utefter det användaren har sökt på.
+Sökningen är baserad på bildernas "category"
+Vid en sökning så skickas den inskrivna informationen till vår server som 
+i sin tur skickar en SQL-sats till vår databas beroende på vilken kategori
+man sökt efter. Sedan visas de bilderna som matchar kategorin.  
+
+*/
+
 
 
 function App() {

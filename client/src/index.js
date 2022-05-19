@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { render } from 'react-dom'
+import RegisterUser from './pages/register/register';
 window.React = React
+
+
+// Här renderas vår applikation 
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
