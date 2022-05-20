@@ -5,3 +5,8 @@
     justify-content: center;
     /* text-align: center; */
 }
+
+#uploadlogo {
+    width: 100px;
+    padding: 10px;
+}

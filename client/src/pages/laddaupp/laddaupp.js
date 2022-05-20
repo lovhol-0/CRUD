@@ -1,19 +1,19 @@
 import Axios from 'axios';
-import "./laddaupp.css";
 import React,{Component} from 'react';
+import "./laddaupp.css";
+import logo from "./../../images/logo.png";
 
 /*
-Sida som möjliggör bilduppladdning från användare, som sedan sparas i vår databas.
+Sida där användaren kan ladda upp en bild som sedan läggs till i databasen.
 */
  
 class App extends Component {
   
     state = {
  
-        file: null,
-    base64URL: ""
       // Initially, no file is selected
-    //   selectedFile: null
+      selectedFile: null,
+      base64URL: ""
     };
 
     getBase64 = file => {
@@ -22,10 +22,8 @@ class App extends Component {
           let baseURL = "";
           // Make new FileReader
           let reader = new FileReader();
-    
           // Convert the file to base64 text
           reader.readAsDataURL(file);
-    
           // on reader load somthing...
           reader.onload = () => {
             // Make a fileInfo Object
@@ -34,8 +32,6 @@ class App extends Component {
             console.log(baseURL);
             resolve(baseURL);
             Axios.post("http://localhost:3003/laddaupp", {img: baseURL});
-
-
           };
           console.log(fileInfo);
         });
@@ -44,31 +40,8 @@ class App extends Component {
     // On file select (from the pop up)
     onFileChange = event => {
 
-        console.log(event.target.files[0]);
-    let { file } = this.state;
+        this.setState({ selectedFile: event.target.files[0] });
 
-    file = event.target.files[0];
-
-    this.getBase64(file)
-      .then(result => {
-        file["base64"] = result;
-        console.log("File Is", file);
-        this.setState({
-          base64URL: result,
-          file
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-
-    this.setState({
-      file: event.target.files[0]
-    });
-    
-      // Update the state
-    //   this.setState({ selectedFile: event.target.files[0] });
-    
     };
     
     // On file upload (click the upload button)
@@ -79,8 +52,7 @@ class App extends Component {
     
       // Update the formData object
       formData.append(
-        "myFile"
-        ,
+        "myFile",
         this.state.selectedFile,
         this.state.selectedFile.name
       );
@@ -90,7 +62,27 @@ class App extends Component {
     
       // Request made to the backend api
       // Send formData object
-      Axios.post("http://localhost:3003/laddaupp", formData);
+
+    console.log(this.state.selectedFile);
+        let { file } = this.state;
+        file = this.state.selectedFile;
+        this.getBase64(file)
+        .then(result => {
+            file["base64"] = result;
+            console.log("File Is", file);
+            this.setState({
+            base64URL: result,
+            file
+            });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+        this.setState({
+        file: this.state.selectedFile
+        });
+
     };
     
     // File content to be displayed after
@@ -101,24 +93,18 @@ class App extends Component {
          
         return (
           <div>
-            <h2>File Details:</h2>
+            <h2>Fildetaljer:</h2>
              
-<p>File Name: {this.state.selectedFile.name}</p>
+<p>Filnamn: {this.state.selectedFile.name}</p>
+ 
              
-<p>File Type: {this.state.selectedFile.type}</p>
+<p>Filtyp: {this.state.selectedFile.type}</p>
 
-<p>File Size: {this.state.selectedFile.size} byte</p>
-
-<p>Image width: {this.state.selectedFile.width}</p>
-
-<p>Image height: {this.state.selectedFile.height}</p>
-
-{/* <p>Date: {" "} {this.state.selectedFile.date.toDateString()}</p> */}
-
+<p>Filstorlek: {this.state.selectedFile.size} byte</p>
  
              
 <p>
-              Last Modified:{" "}
+              Datum:{" "}
               {this.state.selectedFile.lastModifiedDate.toDateString()}
             </p>
  
@@ -128,7 +114,7 @@ class App extends Component {
         return (
           <div>
             <br />
-            <h4>Choose before Pressing the Upload button</h4>
+            <h4></h4>
           </div>
         );
       }
@@ -138,16 +124,17 @@ class App extends Component {
     
       return (
         <div className="imageupload">
+            <img src={logo} alt="Logo" id="uploadlogo"/>
             <h1>
-              GeeksforGeeks
+              Ladda upp bild
             </h1>
             <h3>
-              File Upload using React!
+              Välj bild att ladda upp nedan
             </h3>
             <div>
                 <input type="file" onChange={this.onFileChange} />
                 <button onClick={this.onFileUpload}>
-                  Upload!
+                  Ladda upp!
                 </button>
             </div>
           {this.fileData()}

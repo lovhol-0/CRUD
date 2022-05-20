@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import "./login.css"
-import { useNavigate } from "react-router-dom";
 
 /*
 Sida där användaren kan logga in. 
@@ -11,20 +10,7 @@ till vår databas för att se så att det finns
 en email som är kopplad till det angivna lösenordet. 
 Har man skrivit in fel information så får man ett felmeddelande. 
 Annars sätts status som "LoggedIn" och man skickas vidare till en inloggad vy.
-
 */
-
-/*
-Sida där användaren kan logga in. 
-När inloggnings-infon har matats in och man klickar på "Logga in"
-så skickas informationen till servern som i sin tur skickar en SQL-sats
-till vår databas för att se så att det finns 
-en email som är kopplad till det angivna lösenordet. 
-Har man skrivit in fel information så får man ett felmeddelande. 
-Annars sätts status som "LoggedIn" och man skickas vidare till en inloggad vy.
-
-*/
-
 
 function Login() {
 
@@ -32,8 +18,6 @@ function Login() {
     const [password, setPassword] = useState("");
     const [loginMessage, setLoginMessage] = useState("");
     const [loginStatus, setloginStatus] = useState();
-    const navigate = useNavigate();
-
     
     const loggaIn = () => {
         Axios.post("http://localhost:3003/login",{
@@ -55,15 +39,12 @@ function Login() {
                 localStorage.removeItem("LoggedIn");
                 localStorage.setItem("LoggedIn", true);
                 window.location.href = '/'
-                // navigate("/");
             }
     });
             
         };
 
-
     return(
-        
             
         <div className={"login"}>
              <div className={"Logga in"}>
@@ -83,7 +64,6 @@ function Login() {
             <h3>{loginMessage}</h3>
         </div>
         
-      
     );
 }
 

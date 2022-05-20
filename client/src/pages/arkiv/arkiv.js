@@ -10,23 +10,9 @@ Sökningen är baserad på bildernas "category"
 Vid en sökning så skickas den inskrivna informationen till vår server som 
 i sin tur skickar en SQL-sats till vår databas beroende på vilken kategori
 man sökt efter. Sedan visas de bilderna som matchar kategorin.  
-
 */
-
-/*
-Sida som visar bilder utefter det användaren har sökt på.
-Sökningen är baserad på bildernas "category"
-Vid en sökning så skickas den inskrivna informationen till vår server som 
-i sin tur skickar en SQL-sats till vår databas beroende på vilken kategori
-man sökt efter. Sedan visas de bilderna som matchar kategorin.  
-
-*/
-
-
 
 function App() {
-
-  
 
   const [imagesIDList, setImagesIDList] = useState([]);
   const [category, setCategory] = useState("");
@@ -48,31 +34,26 @@ function App() {
     Axios.put("http://localhost:3003/imagesID",{category: category}).then((response) => {
       setImagesIDList(response.data);
       {console.log(imagesIDList)} 
-      // {setCategory(localStorage.getItem("Category"));}
-      
     });
   };
 
-  
+  const getImagesID2 = (category) => {
+    Axios.put("http://localhost:3003/imagesID2",{category: category}).then((response) => {
+      imagesIDList.push(response.data);
+      {console.log(imagesIDList)} 
+    });
+  };
 
   return (
     <div className="test">
 
-      {/* <input type="text" placeholder={category} name="search"
-          onChange={(event)=> {setCategory(event.target.value)}}/> */}
-
-      {/* {setCategory(localStorage.getItem("Category"))} */}
       {console.log(category)}
 
       <h1>Nuvarande sökning: {localStorage.getItem("Category")}</h1>
-      
-      {/* <input type="text"></input> */}
 
       <input type="text" name="search" autocomplete="off" value={localStorage.getItem("Category")}
           onChange={(event)=> {localStorage.setItem("Category", event.target.value)}}/>
-      {/* {console.log(category)} */}
 
-      {/* <button onClick={handle}>Sök</button> */}
       <button onClick={handleDelete}>Återställ sökning</button>
 
       <div className="images">
@@ -82,7 +63,6 @@ function App() {
            
             return (
             <div className="image">
-
 
               <Popup trigger={<img className="img" src={`data:image/png;base64,${val.img}`} alt=""/>} modal>
                 <span>
@@ -108,13 +88,10 @@ function App() {
                   </div>
                 </span>
               </Popup>
-
-
                  
             </div>
             );
           })}
-          
           
       </div>
     </div>

@@ -9,7 +9,6 @@ Här kan användaren skriva in sin användarinformation och sedan skicka den til
 som i sin tur skickar in informationen till vår databas genom en SQL-sats. 
 Det är importen Axios som gör detta möjligt. 
 Efter lyckad registrering skickas användaren visare till inloggsidan.
-
 */
 
 function RegisterUser(){
@@ -20,7 +19,6 @@ function RegisterUser(){
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
     const navigate = useNavigate();
-
 
     const register = () => {
         Axios.post("http://localhost:3003/register",{
@@ -33,7 +31,6 @@ function RegisterUser(){
             }).then((response) => {
                 console.log(response);
                 if(response) {
-                    // window.location.href = '/login'
                     navigate("/login");
                 }
             });

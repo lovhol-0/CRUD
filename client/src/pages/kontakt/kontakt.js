@@ -3,11 +3,7 @@ import logo from "./../../images/logo.png";
 
 /*
 Här visas kontaktinformation till de som arbetar på Bothniabladet.
-
 */
-
-
-
 
 const Kontakt = () => {
 
@@ -16,9 +12,7 @@ return(
 
 <div className={"kontakt"}>
 
-
              <div className={"kontakter"}>
-                 
 
                 <div class="kontaktGruppen">           
                     <p class="headerText"> Bothniabladets Bildbyrå </p>     
@@ -59,16 +53,9 @@ return(
                  <p class="subText"> arne@bothniabild.se </p> 
                  <p class="subText"> 070-345 67 89 </p>          
                 </div>
-
-                 
+ 
              </div>
         </div>
-
-
-          
-                  
-                    
-
 
     ); 
   };

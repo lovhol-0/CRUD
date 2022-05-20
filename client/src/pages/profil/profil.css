@@ -11,8 +11,6 @@
   }
   
   .inloggadProfil {
-      
-      /* width: 30%; */
       height: fit-content;
       padding: 24px;
       border-radius: 8px;
@@ -22,20 +20,17 @@
   .profilBild {
       padding: 24px;
       width: 30%;
-  
   }
   
   .logoWrap {
     width: 100px;
     display: flex;
     flex-direction: column;
-  
   }
   
   
   .imageLogo {
     display: block;
-  
   }
 
   @media all and (max-width: 900px) {

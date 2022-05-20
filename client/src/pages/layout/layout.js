@@ -16,13 +16,11 @@ Dessa navbars har länkar för att navigera sig till olika sidor.
 
 const Layout = () => {
 
-
   const handle = () => {
     {localStorage.removeItem("LoggedIn")};
                         {localStorage.setItem("LoggedIn", false)};
                         {window.location.href = '/'};
   };
-  
 
   return (
     <>
@@ -37,10 +35,6 @@ const Layout = () => {
                     </div>
                     <ul className="nav-list" id="navi-list">
                       <li className="list-item">
-                      {/* <div className="search">
-                        <input type="text" placeholder="Sök efter bild, händelse eller tema" name="search"></input>
-                        <button type="submit">Sök</button>
-                      </div> */}
                       </li>
                       <li className="list-item">
                         <Link to="/arkiv"><img src={arkiv} alt="Arkiv symbol"/>Arkiv</Link>
@@ -51,9 +45,6 @@ const Layout = () => {
                       <li className="list-item">
                         <Link to="/laddaupp"><img src={laddaupp} alt="Ladda upp symbol"/>Ladda upp bild</Link>
                       </li>
-                      <li className="list-item">
-                        <Link to="/laddaupp_test"><img src={laddaupp} alt="Ladda upp symbol"/>Ladda upp test</Link>
-                      </li>
                       <li className="list-item" id="hide">
                         |
                       </li>
@@ -63,15 +54,6 @@ const Layout = () => {
                       <li className="list-item" onClick={handle}>
                         <Link to="">Logga ut</Link>
                       </li>
-                      {/* <li className="list-item">
-                        <Link to="/login">Logga in</Link>
-                      </li>
-                      <li className="list-item">
-                        |
-                      </li>
-                      <li className="list-item">
-                        <Link to="/register">Skapa konto</Link>
-                      </li> */}
                     </ul>
                     <div className="menu" id="toggle-button" onClick={() => {
                                 const naviList = document.getElementById("navi-list");
@@ -94,12 +76,6 @@ const Layout = () => {
                       <Link to="/"><img class="primary-icon" src={logo} alt="Logo"/></Link>
                     </div>
                     <ul className="nav-list" id="navi-list">
-                      {/* <li className="list-item">
-                      <div className="search">
-                        <input type="text" placeholder="Sök efter bild, händelse eller tema" name="search"></input>
-                        <button type="submit">Sök</button>
-                      </div>
-                      </li> */}
                       <li className="list-item">
                         <Link to="/arkiv"><img src={arkiv} alt="Arkiv symbol"/>Arkiv</Link>
                       </li>
@@ -135,11 +111,6 @@ const Layout = () => {
               } 
       })()  
   }  
-
-
-
-
-    
   
   </>
   )

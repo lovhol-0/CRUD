@@ -7,11 +7,7 @@ import Kontakt from "./pages/kontakt/kontakt";
 import RegisterUser from "./pages/register/register";
 import Login from "./pages/login/login";
 import Laddaupp from "./pages/laddaupp/laddaupp";
-import Laddaupp_test from "./pages/laddaupp/laddaupp_test";
 import Profil from "./pages/profil/profil";
-// import Inlogg from "./pages/inlogg/inlogg";
-// import Sokresultat from "./pages/sokresultat/sokresultat";
-// import Sokish from "./pages/sokish/sokish";
 
 /*
 Detta är våra routes som gör det möjligt att navigera runt i vår applikation. 
@@ -31,11 +27,7 @@ const ProjectRoutes = () => {
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<RegisterUser />} />
                 <Route path="laddaupp" element={<Laddaupp />} />
-                <Route path="laddaupp_test" element={<Laddaupp_test />} />
                 <Route path="profil" element={<Profil />} />
-                {/* <Route path="inlogg" element={<Inlogg />} /> */}
-                {/* <Route path="sokresultat" element={<Sokresultat />} /> */}
-                {/* <Route path="sokish" element={<Sokish />} /> */}
             </Route>
         </Routes>
       </Router>

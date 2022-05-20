@@ -66,19 +66,6 @@ body > #root > div {
 	margin-bottom: 4px;
 }
 
-/* .search button {
-	float: right;
-	padding: 6px;
-	margin-top: 8px;
-	margin-right: 16px;
-	background: #ddd;
-	font-size: 17px;
-	border: none;
-	cursor: pointer;
-	width: auto;
-	height: auto;
-} */
-
 .search input {
 	padding: 6px;
 	margin-top: 8px;
