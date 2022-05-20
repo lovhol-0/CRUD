@@ -18,7 +18,7 @@ Ex. Logga in, registrera konto och bildsökning.
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "MyNewPass",
+    password: "password",
     database: "bothniadb", 
 });
 
@@ -70,8 +70,19 @@ app.post('/register', (req, res)=>{
     db.query("INSERT INTO bothniadb.customer (fName, lName, billingAddress, email, password) VALUES (?, ?, ?, ?, ?)",
         [fName, lName, address, email, password],
       (err, result)=> {
+<<<<<<< HEAD
         console.log(err);
         res.send(result.data);
+=======
+      
+       if (err) {
+           console.log(err);
+           res.send({message: "Något gick fel med registreringen"});
+       }
+       if (result.data != 0){
+        res.send(data);
+        } 
+>>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
         } 
         
     );

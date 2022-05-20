@@ -13,6 +13,10 @@ import Profil from "./pages/profil/profil";
 // import Sokresultat from "./pages/sokresultat/sokresultat";
 // import Sokish from "./pages/sokish/sokish";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 /*
 Detta är våra routes som gör det möjligt att navigera runt i vår applikation. 
 Varje route har en URL som är kopplad till en specifik sidas funktion.

@@ -8,12 +8,21 @@ import profil from "./../../images/profil.png";
 import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 /*
 Denna sidan består utav två navbars. En för användare som inte är inloggade
 och en för inloggad användare. De byts automatiskt när man loggar in eller ut.
 Dessa navbars har länkar för att navigera sig till olika sidor. 
 */
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 const Layout = () => {
 
 

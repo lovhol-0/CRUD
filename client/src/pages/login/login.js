@@ -14,6 +14,17 @@ Annars sätts status som "LoggedIn" och man skickas vidare till en inloggad vy.
 
 */
 
+/*
+Sida där användaren kan logga in. 
+När inloggnings-infon har matats in och man klickar på "Logga in"
+så skickas informationen till servern som i sin tur skickar en SQL-sats
+till vår databas för att se så att det finns 
+en email som är kopplad till det angivna lösenordet. 
+Har man skrivit in fel information så får man ett felmeddelande. 
+Annars sätts status som "LoggedIn" och man skickas vidare till en inloggad vy.
+
+*/
+
 
 function Login() {
 
