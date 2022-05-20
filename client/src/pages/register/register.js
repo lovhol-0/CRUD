@@ -3,25 +3,14 @@ import Axios  from 'axios';
 import './register.css'
 import { useNavigate } from "react-router-dom";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 /*
 Sida för registrering av konto.
 Här kan användaren skriva in sin användarinformation och sedan skicka den till servern 
 som i sin tur skickar in informationen till vår databas genom en SQL-sats. 
 Det är importen Axios som gör detta möjligt. 
-<<<<<<< HEAD
 Efter lyckad registrering skickas användaren visare till inloggsidan.
 
 */
-=======
-Efter lyckad registrering skickas användaren visare till startsidan.
-
-*/
-
->>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 
 function RegisterUser(){
 
@@ -30,13 +19,8 @@ function RegisterUser(){
     const [addressReg, setAddressReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
-<<<<<<< HEAD
     const navigate = useNavigate();
 
-=======
-    
-  //  const navigate = useNavigate();
->>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
 
     const register = () => {
         Axios.post("http://localhost:3003/register",{
@@ -48,17 +32,10 @@ function RegisterUser(){
             
             }).then((response) => {
                 console.log(response);
-<<<<<<< HEAD
                 if(response) {
                     // window.location.href = '/login'
                     navigate("/login");
                 }
-=======
-                if(response.data) {
-                   // navigate("/");
-                    window.location.href = '/'
-                } 
->>>>>>> f39e3f050edd9524ec3d9d6ab53ab87997085585
             });
             
         };
