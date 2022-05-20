@@ -142,4 +142,8 @@ body > #root > div {
 		display: block;
 	}
 
+	#hide {
+		display: none;
+	}
+
 }

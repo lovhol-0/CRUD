@@ -4,10 +4,18 @@ import laddaupp from "./../../images/laddaupp.png";
 import kontakt from "./../../images/kontakt.png";
 import arkiv from "./../../images/arkiv.png";
 import loggain from "./../../images/loggain.png";
+import profil from "./../../images/profil.png";
 import { Outlet, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+/*
+Denna sidan består utav två navbars. En för användare som inte är inloggade
+och en för inloggad användare. De byts automatiskt när man loggar in eller ut.
+Dessa navbars har länkar för att navigera sig till olika sidor. 
+*/
+
 const Layout = () => {
+
 
   const handle = () => {
     {localStorage.removeItem("LoggedIn")};
@@ -44,7 +52,13 @@ const Layout = () => {
                         <Link to="/laddaupp"><img src={laddaupp} alt="Ladda upp symbol"/>Ladda upp bild</Link>
                       </li>
                       <li className="list-item">
+                        <Link to="/laddaupp_test"><img src={laddaupp} alt="Ladda upp symbol"/>Ladda upp test</Link>
+                      </li>
+                      <li className="list-item" id="hide">
                         |
+                      </li>
+                      <li className="list-item">
+                        <Link to="/profil"><img src={profil} alt="Profil symbol"/>Profil</Link>
                       </li>
                       <li className="list-item" onClick={handle}>
                         <Link to="">Logga ut</Link>
@@ -72,7 +86,7 @@ const Layout = () => {
                   <Outlet />
     </>
                   )
-              } else if (localStorage.getItem("LoggedIn")==='false') {
+              } else {
                   return (
                     <>
                     <nav className="navbar">
@@ -92,13 +106,13 @@ const Layout = () => {
                       <li className="list-item">
                         <Link to="/kontakt"><img src={kontakt} alt="Kontakt symbol"/>Kontakt</Link>
                       </li>
-                      <li className="list-item">
+                      <li className="list-item" id="hide">
                         |
                       </li>
                       <li className="list-item">
                         <Link to="/login"><img src={loggain} alt="Logga in symbol"/>Logga in</Link>
                       </li>
-                      <li className="list-item">
+                      <li className="list-item" id="hide">
                         |
                       </li>
                       <li className="list-item">

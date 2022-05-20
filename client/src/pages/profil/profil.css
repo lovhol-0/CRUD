@@ -1,0 +1,47 @@
+.profil {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: white;
+    margin-top: 5%;
+      
+  }
+  
+  .inloggadProfil {
+      
+      /* width: 30%; */
+      height: fit-content;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid black;
+  }
+  
+  .profilBild {
+      padding: 24px;
+      width: 30%;
+  
+  }
+  
+  .logoWrap {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  
+  .imageLogo {
+    display: block;
+  
+  }
+
+  @media all and (max-width: 900px) {
+    .profil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

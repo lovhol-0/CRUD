@@ -6,6 +6,15 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+
+/*
+Fil för databas-kopplingen
+Detta är våran server-del. Här sköts allt som har med att skicka eller ta emot data 
+från vår MySql-databas "bothniadb". 
+Ex. Logga in, registrera konto och bildsökning.
+
+*/
+
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
@@ -25,9 +34,20 @@ const db = mysql.createConnection({
 //     });
 // });
 
+
+app.post('/laddaupp', (req, res)=>{
+
+    const img = req.body.img;
+    db.query("INSERT INTO images (img, category) VALUES (?, ?)",
+    [img, "upload"],
+    (err, result)=> {
+        console.log(err);
+    });
+})
+
 app.put("/imagesID", (req, res) => {
     const category = req.body.category;
-    db.query("SELECT imageID, category, price, to_base64(img) as img FROM images WHERE category LIKE ?", 
+    db.query("SELECT price, fileSize, format, description, category, resolution, aspectRatio, locationTaken, dateTaken, photographer, to_base64(img) as img FROM images WHERE category LIKE ?", 
     ["%" + category + "%"],
      (err, result) => {
         if (err) {
@@ -51,6 +71,7 @@ app.post('/register', (req, res)=>{
         [fName, lName, address, email, password],
       (err, result)=> {
         console.log(err);
+        res.send(result.data);
         } 
         
     );

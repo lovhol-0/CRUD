@@ -1,6 +1,16 @@
 import React, {useState} from "react";
 import Axios  from 'axios';
 import './register.css'
+import { useNavigate } from "react-router-dom";
+
+/*
+Sida för registrering av konto.
+Här kan användaren skriva in sin användarinformation och sedan skicka den till servern 
+som i sin tur skickar in informationen till vår databas genom en SQL-sats. 
+Det är importen Axios som gör detta möjligt. 
+Efter lyckad registrering skickas användaren visare till inloggsidan.
+
+*/
 
 function RegisterUser(){
 
@@ -9,6 +19,7 @@ function RegisterUser(){
     const [addressReg, setAddressReg] = useState("");
     const [emailReg, setEmailReg] = useState("");
     const [passwordReg, setPasswordReg] = useState("");
+    const navigate = useNavigate();
 
 
     const register = () => {
@@ -21,6 +32,10 @@ function RegisterUser(){
             
             }).then((response) => {
                 console.log(response);
+                if(response) {
+                    // window.location.href = '/login'
+                    navigate("/login");
+                }
             });
             
         };

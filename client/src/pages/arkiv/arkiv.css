@@ -132,3 +132,18 @@
       border-radius: 10px;
       width: 50vh;
   }
+
+  #popupbutton {
+    font-size: 12px;
+    height: 42px;
+  }
+
+  @media all and (max-width: 900px) {
+    .images {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      input {
+        width: 40vh;
+    }
+  }
